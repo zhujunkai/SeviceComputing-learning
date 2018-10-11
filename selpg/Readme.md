@@ -1,18 +1,18 @@
-#Go的Selpg
+<h1>Go的Selpg</h1>
 
 -----
 
 [TOC]
 
-##使用方法
+<h2>使用方法</h2>
 
 ```USAGE: ./selpg --s start_page --e end_page [ --f | --l lines_per_page ] [ --d dest ] [ in_filename ]```
 
-##参考资料
+<h2>参考资料</h2>
 
 这个主要就是根据[c语言版本的selpg](./selpg.c)进行翻译得到的对应的go语言selpg。（借助老师提供那些网址帮助翻译，并且使用pflag来获取参数）
 
-##代码内容
+<h2>代码内容</h2>
 
 * ```type selpg_args struct``` 这个是记录参数的函数
 * ```main()``` 函数本来是只包含了一些初始化和其他模块的引用，但后来发现Pflag没有那么复杂，就也放在里面了
@@ -21,15 +21,15 @@
 * ```process_input()``` 函数是为了根据参数的设置对输入进行相应的输出
 * ```process_args(args []string)``` 这是根据c版本的改编的一个函数，已经被上面的pflag代替，没有用到，主要是用来检测参数输入用的。
 
-##运行截图
+<h2>运行截图</h2>
 
-###程序提示
+<h3>程序提示</h3>
 
 ```./selpg -h```
 
 ![](images/s5.png)
 
-###测试
+<h3>测试</h3>
 
 ```./selpg --s 1 --e 3 test```
 
