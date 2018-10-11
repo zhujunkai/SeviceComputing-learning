@@ -31,7 +31,7 @@ const INBUFSIZ = 16 * 1024
 func main() {
 	flag.IntVar(&sa.start_page, "s", -1, "The start page")
 	flag.IntVar(&sa.end_page, "e", -1, "The end page")
-	flag.IntVar(&sa.page_len, "l", -1, "The length of the page")
+	flag.IntVar(&sa.page_len, "l", 72, "The length of the page")
 	flag.StringVar(&sa.print_dest, "d", "", "The destination to print")
 	f_flag := flag.Bool("f", false, "")
 	flag.Parse()
@@ -42,16 +42,15 @@ func main() {
 	} else {
 		sa.page_type = 'l' // page_type default True
 	}
-
+	sa.in_filename = ""
+	progname = "selpg"
 	//sa.start_page = -1
 	//sa.end_page = -1
-	sa.in_filename = ""
 	//sa.page_len = 72
 	//sa.page_type = 'l'
 	//sa.print_dest = ""
 	//args := os.Args
 	//argcount = len(args)
-	progname = "selpg"
 	//process_args(args)
 	if flag.NArg() == 1 {
 		sa.in_filename = flag.Arg(0)
@@ -76,7 +75,7 @@ func validate_args(sa selpg_args, rest int) { // 检验输入参数是否合法�
 		Usage()
 		os.Exit(1)
 	}
-	if sa.page_type == 'f' && sa.page_len != -1 {
+	if sa.page_type == 'f' && sa.page_len != 72 {
 		fmt.Fprintf(os.Stderr, "./selpg: Conflict flags: -f and -l")
 		Usage()
 		os.Exit(1)
@@ -145,7 +144,7 @@ func process_input() {
 			}
 			pageContent = strings.Replace(pageContent, "\f", "", -1)
 			if page_ctr >= sa.start_page && page_ctr <= sa.end_page {
-				fmt.Fprintf(fout, "%s", pageContent)
+				fmt.Fprintf(fout, "%s\n", pageContent)
 			}
 			page_ctr++
 		}
