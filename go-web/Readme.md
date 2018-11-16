@@ -168,14 +168,14 @@ func (srv *Server) Serve(l net.Listener) error {
 
 ----
 
-用HandleFunc给每种访问提供对应的处理路由。
+用HandleFunc给每种访问提供对应的处理路由。</br>
 ![](media/15423962030112.jpg)
 
 <h2>表单处理</h2>
 
 ----
 
-通过PaeseForm，提取表单内部的数据值。
+通过PaeseForm，提取表单内部的数据值。</br>
 ![](media/15423964157602.jpg)
 
 
@@ -184,7 +184,7 @@ func (srv *Server) Serve(l net.Listener) error {
 
 ----
 
-将你的数据转化成页面写上去。
+将你的数据转化成页面写上去。</br>
 ![](media/15423965765478.jpg)
 ![](media/15423965988590.jpg)
 
@@ -194,23 +194,23 @@ func (srv *Server) Serve(l net.Listener) error {
 
 ----
 
-登入
+登入</br>
 ![](media/15423966877001.jpg)
 
-注册，传表单
+注册，传表单</br>
 ![](media/15423967782107.jpg)
 
 
-登入查看对应内容
+登入查看对应内容</br>
 
 ![](media/15423968492689.jpg)
 
 
-静态文件服务
+静态文件服务</br>
 
 ![](media/15423977404158.jpg)
 
-/unknown
+/unknown</br>
 
 ![](media/15423976658701.jpg)
 
